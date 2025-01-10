@@ -52,7 +52,7 @@ class WordleDataModel: ObservableObject {
         // reset keyboard colors
         let letters = "ABCDEFGHIJKLMNOPQRSTUVWXYZ"
         for char in letters {
-            keyColors[String(char)] = .unused
+            keyColors[String(char)] = .unusedColor
         }
         matchedLetters = []
         misplacedLetters = []
@@ -116,10 +116,10 @@ class WordleDataModel: ObservableObject {
             let correctLetter = correctLetters[index]
             let guessLetter = guesses[tryIndex].guessLetters[index]
             if guessLetter == correctLetter {
-                guesses[tryIndex].bgColors[index] = .correctColor
+                guesses[tryIndex].bgColors[index] = .correct
                 if !matchedLetters.contains(guessLetter) {
                     matchedLetters.append(guessLetter)
-                    keyColors[guessLetter] = .correctColor
+                    keyColors[guessLetter] = .correct
                 }
                 if misplacedLetters.contains(guessLetter) {
                     if let index = misplacedLetters.firstIndex(where: {$0 == guessLetter}) {
@@ -133,11 +133,12 @@ class WordleDataModel: ObservableObject {
         for index in 0...4 {
             let guessLetter = guesses[tryIndex].guessLetters[index]
             if correctLetters.contains(guessLetter)
-                && guesses[tryIndex].bgColors[index] != .correct && frequency[guessLetter]! > 0 {
-                guesses[tryIndex].bgColors[index] = .misplacedColor
-                if !misplacedLetters.contains(guessLetter) && matchedLetters.contains(guessLetter) {
+                && guesses[tryIndex].bgColors[index] != .correct
+                && frequency[guessLetter]! > 0 {
+                guesses[tryIndex].bgColors[index] = .misplaced
+                if !misplacedLetters.contains(guessLetter) && !matchedLetters.contains(guessLetter) {
                     misplacedLetters.append(guessLetter)
-                    keyColors[guessLetter] = .misplacedColor
+                    keyColors[guessLetter] = .misplaced
                 }
                 frequency[guessLetter]! -= 1
             }
@@ -145,17 +146,17 @@ class WordleDataModel: ObservableObject {
         
         for index in 0...4 {
             let guessLetter = guesses[tryIndex].guessLetters[index]
-            if keyColors[guessLetter] != .correctColor && keyColors[guessLetter] != .misplacedColor {
-                keyColors[guessLetter] = .wrongColor
+            if keyColors[guessLetter] != .correct
+                && keyColors[guessLetter] != .misplaced {
+                keyColors[guessLetter] = .wrong
             }
         }
-        
         flipCards(for: tryIndex)
     }
     
     func flipCards(for row: Int) {
         for col in 0...4 {
-            DispatchQueue.main.asyncAfter(deadline: DispatchTime.now() + Double(col) * 0.2) { [weak self] in
+            DispatchQueue.main.asyncAfter(deadline: .now() + Double(col) * 0.2) { [weak self] in
                 self?.guesses[row].carFlipped[col].toggle()
             }
         }
