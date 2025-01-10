@@ -19,6 +19,7 @@
 		DEC2ACD52D3008F8003A876A /* Global.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEC2ACD42D3008F8003A876A /* Global.swift */; };
 		DEC2ACD82D30121A003A876A /* LetterButtonView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEC2ACD72D30121A003A876A /* LetterButtonView.swift */; };
 		DEC2ACDA2D3013BE003A876A /* Keyboard.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEC2ACD92D3013BE003A876A /* Keyboard.swift */; };
+		DEC2ACDD2D311598003A876A /* Shake.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEC2ACDC2D311598003A876A /* Shake.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -35,6 +36,7 @@
 		DEC2ACD42D3008F8003A876A /* Global.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Global.swift; sourceTree = "<group>"; };
 		DEC2ACD72D30121A003A876A /* LetterButtonView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LetterButtonView.swift; sourceTree = "<group>"; };
 		DEC2ACD92D3013BE003A876A /* Keyboard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Keyboard.swift; sourceTree = "<group>"; };
+		DEC2ACDC2D311598003A876A /* Shake.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Shake.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -67,6 +69,7 @@
 		DEC2ACB72D2FE47C003A876A /* WordleClone */ = {
 			isa = PBXGroup;
 			children = (
+				DEC2ACDB2D311589003A876A /* Animations */,
 				DEC2ACD12D3007C4003A876A /* ViewModel */,
 				DEC2ACCE2D3004CA003A876A /* Views */,
 				DEC2ACCB2D3003F7003A876A /* Models */,
@@ -121,6 +124,14 @@
 				DEC2ACD22D300809003A876A /* WordleDataModel.swift */,
 			);
 			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		DEC2ACDB2D311589003A876A /* Animations */ = {
+			isa = PBXGroup;
+			children = (
+				DEC2ACDC2D311598003A876A /* Shake.swift */,
+			);
+			path = Animations;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -200,6 +211,7 @@
 				DEC2ACCD2D300402003A876A /* Guess.swift in Sources */,
 				DEC2ACDA2D3013BE003A876A /* Keyboard.swift in Sources */,
 				DEC2ACCA2D3002F3003A876A /* Color+Extension.swift in Sources */,
+				DEC2ACDD2D311598003A876A /* Shake.swift in Sources */,
 				DEC2ACD32D300809003A876A /* WordleDataModel.swift in Sources */,
 				DEC2ACB92D2FE47C003A876A /* WordleCloneApp.swift in Sources */,
 				DEC2ACD52D3008F8003A876A /* Global.swift in Sources */,
