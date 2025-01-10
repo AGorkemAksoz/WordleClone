@@ -20,6 +20,7 @@
 		DEC2ACD82D30121A003A876A /* LetterButtonView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEC2ACD72D30121A003A876A /* LetterButtonView.swift */; };
 		DEC2ACDA2D3013BE003A876A /* Keyboard.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEC2ACD92D3013BE003A876A /* Keyboard.swift */; };
 		DEC2ACDD2D311598003A876A /* Shake.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEC2ACDC2D311598003A876A /* Shake.swift */; };
+		DEC2ACDF2D313BB3003A876A /* FlipView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEC2ACDE2D313BB1003A876A /* FlipView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -37,6 +38,7 @@
 		DEC2ACD72D30121A003A876A /* LetterButtonView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LetterButtonView.swift; sourceTree = "<group>"; };
 		DEC2ACD92D3013BE003A876A /* Keyboard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Keyboard.swift; sourceTree = "<group>"; };
 		DEC2ACDC2D311598003A876A /* Shake.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Shake.swift; sourceTree = "<group>"; };
+		DEC2ACDE2D313BB1003A876A /* FlipView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FlipView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -130,6 +132,7 @@
 			isa = PBXGroup;
 			children = (
 				DEC2ACDC2D311598003A876A /* Shake.swift */,
+				DEC2ACDE2D313BB1003A876A /* FlipView.swift */,
 			);
 			path = Animations;
 			sourceTree = "<group>";
@@ -206,6 +209,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				DEC2ACD82D30121A003A876A /* LetterButtonView.swift in Sources */,
+				DEC2ACDF2D313BB3003A876A /* FlipView.swift in Sources */,
 				DEC2ACBB2D2FE47C003A876A /* GameView.swift in Sources */,
 				DEC2ACD02D3004DA003A876A /* GuessView.swift in Sources */,
 				DEC2ACCD2D300402003A876A /* Guess.swift in Sources */,
