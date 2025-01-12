@@ -10,10 +10,14 @@ import SwiftUI
 struct GameView: View {
     @EnvironmentObject var dm: WordleDataModel
     @State private var showSetting = false
+    @State private var showHelp = false
     var body: some View {
         ZStack {
             NavigationStack {
                 VStack {
+                    if Global.screenHeight < 600 {
+                        Text("")
+                    }
                     Spacer()
                     VStack(spacing: 3) {
                         ForEach(0...5, id: \.self) { index in
@@ -30,6 +34,9 @@ struct GameView: View {
                     Spacer()
                 }
                     .navigationBarTitleDisplayMode(.inline)
+                    .sheet(isPresented: $showHelp) {
+                        HelpView()
+                    }
                     .disabled(dm.showStats)
                     .overlay(alignment: .top) {
                         if let toastText = dm.toastText {
@@ -50,7 +57,7 @@ struct GameView: View {
                                 }
 
                                 Button {
-                                    
+                                    showHelp.toggle()
                                 } label: {
                                     Image(systemName: "questionmark.circle")
                                 }
@@ -60,7 +67,7 @@ struct GameView: View {
                             Text("WORDLE")
                                 .font(.largeTitle)
                                 .fontWeight(.heavy)
-                                .foregroundStyle(.primary)
+                                .foregroundStyle(dm.hardMode ? Color(.systemRed) : .primary)
                         }
                         ToolbarItem(placement: .navigationBarTrailing) {
                             HStack {
